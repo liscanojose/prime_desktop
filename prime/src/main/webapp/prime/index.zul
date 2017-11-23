@@ -1,0 +1,391 @@
+<?page title="Bienvenido (Usuario) | Prime" ?>
+<?link rel="shortcut icon" href="/static/ico/prime-teal-16.png"?>
+<?component name="button" extends="button" width="44px" height="44px"?>
+<?link rel="stylesheet" type="text/css"	href="/static/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/static/css/index.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/user-nav.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/sidebar.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/search.css.dsp" ?>
+<?link rel="stylesheet" type="text/css"
+	href="/static/css/content-header.css.dsp" ?>
+<?link id="theme" rel="stylesheet" type="text/css"
+	href="/static/css/blue.css.dsp"?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/styles.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/admin.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/modal.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/static/css/load.css" ?>
+<?link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" ?>
+
+<zk xmlns:n="native">
+	<div apply="ucla.si.controlador.app.ControladorMenu">
+		<popup id="btntip" sclass="btn-tip" style="margin-top: 10px">
+			<label id="msg" value="Manage Files"></label>
+			<attribute name="onOpen">
+		if (event.isOpen()) {
+			msg.setValue(event.getReference().getAttribute("title").toString());
+		}
+		</attribute>
+	</popup>
+				
+	<div sclass="header">
+		<n:h1>
+			<a>Prime</a>
+		</n:h1>
+	</div>
+
+	<div sclass="search">
+		<bandbox placeholder="Buscar..." />
+	</div>
+	<div sclass="user-nav">
+		<menubar>
+			<menuitem iconSclass="icon icon-white icon-user" label="Perfil" />
+			<menu iconSclass="icon icon-white icon-envelope" label="Mensajes">
+				<menupopup sclass="navpp">
+					<menuitem label="Nuevo mensaje" />
+					<menuitem label="Bandeja de entrada" />
+					<menuitem label="Bandeja de salida" />
+					<menuitem label="Papelera" />
+				</menupopup>
+			</menu>
+			<menuitem iconSclass="icon icon-white icon-cog" label="Configuración" />
+			<menuitem iconSclass="icon icon-white icon-share-alt" label="Salir" />
+		</menubar>
+	</div>
+
+	<navbar orient="vertical" sclass="sidebar">
+		<navitem iconSclass="icon icon-white icon-lugar" label="Inicio" selected="true" id="inicio"/>
+		<nav iconSclass="icon icon-white icon-bookshelf" label="Administración de Recursos" badgeText="3" id="administracion_recursos">
+			<nav label="General"  iconSclass="icon icon-white icon-prime-white " badgeText="3" id="general">
+				<nav label="Opciones de Cliente"  iconSclass="icon icon-white icon-usuario " badgeText="3" id="cliente_menu">
+					<navitem label="Ocupación" id ="ocupacion" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Profesión" id ="profesion" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Tipo de Actividad" id ="tipo_actividad" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Actividad" id ="actividad" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Pasatiempo" id ="pasatiempo" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Tipo de Red Social" id ="sss111" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Red Social" id ="red_social" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Ciudad" id ="ciudad" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Estado" id ="estado" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Clientes" id ="cliente" iconSclass="icon icon-user-add"/>
+				
+				</nav>
+			<nav label="Opciones de Vehiculo"  iconSclass="icon icon-white icon-car " badgeText="3" id="vehiculo_menu">
+			
+				<navitem label="Marca" id ="marca" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Modelo" id ="modelo" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Uso" id ="uso" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Color " id ="color" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Tipo de Motor" id ="tipo_motor" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Rectificación" id ="rectificacion" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Motor" id ="motor" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Tipo de Clase " id ="Tipo_clase" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Clase " id ="clase" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Marca de Repuesto" id ="marca_repuesto" iconSclass="icon icon-bullet-go"/>
+			
+			
+				<navitem label="Tipo de Caja" id ="tipo_caja" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Caja" id ="caja" iconSclass="icon icon-bullet-go"/>
+				
+				<navitem label="Tipo de Aceite" id ="tipo_aceite" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Grosor Aceite" id ="grosor_aceite" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Aceite" id ="aceite" iconSclass="icon icon-bullet-go"/>
+				
+				
+				<navitem label="Tipo de Combustible" id ="tipo_combustible" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Combustible" id ="conbustible" iconSclass="icon icon-bullet-go"/>
+				
+				<navitem label="Tipo de Refrigerante" id ="tipo_refrigerante" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Refrigerante" id ="refrigerante" iconSclass="icon icon-bullet-go"/>
+				
+				
+				<navitem label="Vehiculos" id ="vehiculo" iconSclass="icon icon-car-add"/>
+			</nav>
+				
+				
+				
+			</nav>
+			<nav label="Promoción y Oferta"  iconSclass="icon icon-white icon-coins-in-hand" badgeText="3" id="promocion_oferta">
+			
+			
+				
+				<navitem label="Tipo de Promociones" iconSclass="icon icon-bullet-go" id="tipo_promocion" />
+				<navitem label="Tarifas"  iconSclass="icon icon-bullet-go" id="tarifa" />
+				<navitem label="Descuentos"  iconSclass="icon icon-bullet-go" id="descuento" />
+			
+				
+				
+			</nav>
+			<nav label="Agendas y Citas"  iconSclass="icon icon-white icon-date-edit" badgeText="3" id="agendas_citas">
+			
+				<navitem label="Habilidades" id ="hablidad" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Mecanicos" id ="mecanico" iconSclass="icon icon-bullet-go"/>
+					<navitem label="Espacios (Taller)" id ="espacios" iconSclass="icon icon-bullet-go"/>
+			</nav>
+			<nav label="Servicios"  iconSclass="icon icon-white icon-wrench" badgeText="3" id="servicios">
+				<navitem label="Tareas" iconSclass="icon icon-bullet-go" id="tareas" />
+				<navitem label="Herramientas" iconSclass="icon icon-bullet-go" id="herramientas" />
+				<navitem label="Tecnologías" iconSclass="icon icon-bullet-go" id="tecnologias" />
+				<navitem label="Tipo de Servicio" iconSclass="icon icon-bullet-go" id="tipo_servicio" />
+				<navitem label="Servicio" iconSclass="icon icon-bullet-go" id="servicio" />
+				
+			</nav>
+			<nav label="Post-Servicios"  iconSclass="icon icon-white icon-thumb-up" badgeText="3" id="post_servicios">
+			    <navitem label="Tipo de Garantia" id ="tipo_garantia" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Tipo de Reclamo" id ="tipo_reclamo" iconSclass="icon icon-bullet-go"/>
+			</nav>
+		</nav>
+		
+		
+		
+		<nav iconSclass="icon icon-white icon-lightbulb" label="Promoción y Oferta" badgeText="3" id="promocion_oferta2">
+			<nav label="Catálogo de Servicios"  iconSclass="icon icon-white icon-book-picture" badgeText="3" id="catalogo_servicios">
+				<navitem label="Configurar" id ="configurar_catalogo_servicios" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Actualizar" id ="actualizar_catalogo_servicios" iconSclass="icon icon-bullet-go"/>
+			</nav>
+			<nav label="Promoción"  iconSclass="icon icon-white icon-star" badgeText="3" id="promocion">
+				<navitem label="Configurar" id ="configurar_promocion" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Actualizar" id ="actualizar_promocion" iconSclass="icon icon-bullet-go"/>
+			</nav>
+		</nav>
+		<nav iconSclass="icon icon-white icon-fecha" label="Agenda" badgeText="3" id="agenda">
+			<nav label="Planificación" iconSclass="icon icon-white icon-adiagramm" badgeText="3" id="planificacion">
+				<navitem label="Asignar Espacio" id ="asignar_espacio" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Asignar Mecánico" id ="asignar_mecanico" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Asignar Recurso" id ="asignar_recurso" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Asignar Tiempo" id ="asignar_tiempo" iconSclass="icon icon-bullet-go"/>			
+			</nav>
+			<navitem label="Actualización"  iconSclass="icon icon-white icon-arrow-rotate-anticlockwise"  id="actualizacion"/>
+		</nav>
+		<nav iconSclass="icon icon-white icon-date" label="Citas" badgeText="3" id="cita">
+		    <navitem label="Solicitud Pendiente"  iconSclass="icon icon-white icon-date-go"  id="solicitud_pendiente"/>
+		    <navitem label="Catálogo de Citas"  iconSclass="icon icon-white icon-date-magnify"  id="catalogo_citas"/>
+			<navitem label="Asignar Citas" iconSclass="icon icon-white icon-date-add"  id="asignar_cita" />
+			<navitem label="Cancelar Citas" id ="cancelar_cita" iconSclass="icon icon-date-delete"/>	
+		</nav>
+		<nav iconSclass="icon icon-setting-tools" label="Servicios" badgeText="3" id="servicios2">
+		    <navitem label="Recepción del Vehículo"  iconSclass="icon icon-white icon-chevron-right"  id="recepcion_vehiculo"/>
+		    <navitem label="Diagnóstico"  iconSclass="icon icon-white icon-chevron-right"  id="diagnostico"/>
+		    <navitem label="Asignación de Recursos"  iconSclass="icon icon-white icon-chevron-right"  id="asignar_recursos"/>
+		    <navitem label="Generar de Orden de Servicio"  iconSclass="icon icon-white icon-chevron-right"  id="generar_orden_servicio"/>
+		    <navitem label="Chequear de Servicio"  iconSclass="icon icon-white icon-chevron-right"  id="chequear_servicio"/>
+		    <navitem label="Generar Orden de Entrega"  iconSclass="icon icon-white icon-chevron-right"  id="generar_orden_entrega"/>
+		    <navitem label="Generar Garantía"  iconSclass="icon icon-white icon-chevron-right"  id="generar_garantia"/>
+		    <navitem label="Calificar Servicio"  iconSclass="icon icon-white icon-chevron-right"  id="calificar_servicio"/>
+		</nav>
+		<nav iconSclass="icon icon-white icon-thumb-up" label="Post-Servicio" badgeText="3" id="post_servicio">
+			<navitem label="Solicitud de Reclamo"  iconSclass="icon icon-white icon-chevron-right"  id="solicitud_reclamo"/>
+			<navitem label="Evaluación de Garantía"  iconSclass="icon icon-white icon-chevron-right"  id="evalucion_garantia"/>
+			<navitem label="Asignar Cita Prioritaria"  iconSclass="icon icon-white icon-chevron-right"  id="asignar_cita_prioritaria"/>
+		</nav>
+		<nav iconSclass="icon icon-white icon-estadistica" label="Reportes" badgeText="3" id="reportes">
+			<navitem label="Reportes Estaditicos"  iconSclass="icon icon-white icon-chevron-right"  id="reportes_estadisticos"/>
+		</nav>
+		<nav iconSclass="icon icon-white icon-gear-in" label="Administración del Sistema" badgeText="3" id="administracion">
+			<nav label="Seguridad Funcional" iconSclass="icon icon-white icon-key" badgeText="3" id="segurar_funcional">
+				<navitem label="Funciones" id ="funciones" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Grupos" id ="grupos" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Usuarios" id ="usuarios" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Perfil de Usuario" id ="perfil_usuario" iconSclass="icon icon-bullet-go"/>			
+			</nav>
+			<nav label="Configuración del portal WEB" iconSclass="icon icon-white icon-laptop" badgeText="3" id="web">
+				<navitem label="Actualizar Contenido" id ="actualizar_contenido_web" iconSclass="icon icon-bullet-go"/>
+						
+			</nav>
+			<nav label="Configuración App Móvil" iconSclass="icon icon-white icon-phone-android " badgeText="3" id="movil">
+				<navitem label="Actualizar Contenido" id ="actualizar_contenido_movil" iconSclass="icon icon-bullet-go"/>
+						
+			</nav>
+			<nav label="Configuración de Difusión" iconSclass="icon icon-white icon-sound" badgeText="3" id="difusion">
+				<navitem label="Correo Electrónico" id ="correo_electronico" iconSclass="icon icon-bullet-go"/>
+				<navitem label="Redes Sociales" id ="redes_sociales" iconSclass="icon icon-bullet-go"/>
+						
+			</nav>
+			
+			<navitem label="Base de Datos" id ="bd" iconSclass="icon icon-database-gear"/>
+		</nav>
+	</navbar>
+		
+	<div sclass="content">
+		<div sclass="content-header">
+			<n:h1>Bienvenido (Usuario)</n:h1>
+			<div class="btn-group">
+				<button zclass="btn" iconSclass="icon-file" tooltip="btntip,after_center"  id ="dashboard">
+					<custom-attributes title="Tablero" />
+				</button>
+				<button zclass="btn" iconSclass="icon-user" tooltip="btntip,after_center">
+					<custom-attributes title="Perfil" />
+				</button>
+				<button zclass="btn" iconSclass="icon-comment" tooltip="btntip,after_center">
+					<custom-attributes title="Notificaciones" />
+				</button>
+				<button zclass="btn" iconSclass="icon-shopping-cart" tooltip="btntip,after_center">
+					<custom-attributes title="Configuración" />
+				</button>
+			</div>
+		</div>
+		<div id="app">
+		</div>
+	</div>
+</div>
+<script src="/static/js/excanvas.min.js" type="" if="${zk.ie lt 9}" ></script>	
+<script src="/static/js/jquery.flot.min.js"></script>
+<script src="/static/js/jquery.peity.min.js"></script>
+<script><![CDATA[
+(function ($) {
+    var options = { }; // no options
+
+    function init(plot) {
+        function onResize() {
+            var placeholder = plot.getPlaceholder();
+
+            // somebody might have hidden us and we can't plot
+            // when we don't have the dimensions
+            if (placeholder.width() == 0 || placeholder.height() == 0)
+                return;
+
+            plot.resize();
+            plot.setupGrid();
+            plot.draw();
+            setTimeout(function () {
+            	zk.afterResize(onResize);
+            });
+        }
+        zk.afterResize(onResize);
+    }
+    
+    $.plot.plugins.push({
+        init: init,
+        options: options,
+        name: 'resize',
+        version: '1.0'
+    });
+})(jQuery);
+zk.afterResize(function(){
+	
+	
+	// === Prepare peity charts === //
+	unicorn.peity();
+	
+	// === Prepare the chart data ===/
+	var sin = [], cos = [];
+    for (var i = 0; i < 14; i += 0.5) {
+        sin.push([i, Math.sin(i)]);
+        cos.push([i, Math.cos(i)]);
+    }
+
+	// === Make chart === //
+    var plot = $.plot($(".chart"),
+           [ { data: sin, label: "sin(x)", color: "#BA1E20"}, { data: cos, label: "cos(x)",color: "#459D1C" } ], {
+               series: {
+                   lines: { show: true },
+                   points: { show: true }
+               },
+               grid: { hoverable: true, clickable: true },
+               yaxis: { min: -1.6, max: 1.6 }
+		   });
+    
+	// === Point hover in chart === //
+    var previousPoint = null;
+    $(".chart").bind("plothover", function (event, pos, item) {
+		
+        if (item) {
+            if (previousPoint != item.dataIndex) {
+                previousPoint = item.dataIndex;
+                
+                $('#tooltip').fadeOut(200,function(){
+					$(this).remove();
+				});
+                var x = item.datapoint[0].toFixed(2),
+					y = item.datapoint[1].toFixed(2);
+                    
+                unicorn.flot_tooltip(item.pageX, item.pageY,item.series.label + " of " + x + " = " + y);
+            }
+            
+        } else {
+			$('#tooltip').fadeOut(200,function(){
+					$(this).remove();
+				});
+            previousPoint = null;           
+        }   
+    });
+});
+
+// Referred from unicorn-admin-template
+unicorn = {
+		// === Peity charts === //
+		peity: function(){		
+			$.fn.peity.defaults.line = {
+				strokeWidth: 1,
+				delimeter: ",",
+				height: 24,
+				max: null,
+				min: 0,
+				width: 50
+			};
+			$.fn.peity.defaults.bar = {
+				delimeter: ",",
+				height: 24,
+				max: null,
+				min: 0,
+				width: 50
+			};
+			$(".peity_line_good span").peity("line", {
+				colour: "#B1FFA9",
+				strokeColour: "#459D1C"
+			});
+			$(".peity_line_bad span").peity("line", {
+				colour: "#FFC4C7",
+				strokeColour: "#BA1E20"
+			});	
+			$(".peity_line_neutral span").peity("line", {
+				colour: "#CCCCCC",
+				strokeColour: "#757575"
+			});
+			$(".peity_bar_good span").peity("bar", {
+				colour: "#459D1C"
+			});
+			$(".peity_bar_bad span").peity("bar", {
+				colour: "#BA1E20"
+			});	
+			$(".peity_bar_neutral span").peity("bar", {
+				colour: "#757575"
+			});
+		},
+
+		// === Tooltip for flot charts === //
+		flot_tooltip: function(x, y, contents) {
+			
+			$('<div id="tooltip">' + contents + '</div>').css( {
+				top: y + 5,
+				left: x + 5
+			}).appendTo("body").fadeIn(200);
+		}
+}
+if (zk.ie && zk.ie < 8) {
+	jq.alert("Your browser is not supported, please use the latest one! (IE8+)");
+}
+]]></script>
+<script if='${execution.serverName == "www.zkoss.org" or execution.serverName == "www.potix.com"}'><![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+var gafn = function () {
+if (window._gat) {
+	gafn = null;
+	try {
+		var pageTracker = _gat._getTracker("UA-121377-3");
+		pageTracker._setDomainName("zkoss.org");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+
+	} catch (e) {
+	}
+} else
+	setTimeout(gafn, 1000);
+};
+gafn();
+]]></script>
+</zk>

@@ -1,0 +1,50 @@
+==============Comandos Basicos============
+
+== > Para restaurar BD dado un respaldo en formato sql
+
+psql --host localhost  -U postgres --port 5432 --file /ruta/nombre_bd.sql nombre_bd_en_postgress
+
+== > Ver procesos en el puerto 8080
+
+netstat -npl | grep 8080
+
+== > Matar procesos
+
+kill -9 numero del proceso
+
+== > Para Modificar las credenciales de la BD (a modificar)
+
+ir a src > main > resorces > META-INF > persistence.xml
+
+y modificar  el value de <property name="hibernate.connection.password" value="por_su_clave_postgress" />
+
+--Estandares de Templates--
+
+Formularios: frm-nombre
+Listas: list-nombre
+
+--Estandares de paquetes y carpetas en templates--
+
+Gestión de Promoción y oferta: gpo
+Gestión de Agendas y Citas: gac
+Gestión de Servicio: gs
+Gestión de Post-Servicio: gps
+Gestión de Difusión y Escucha al Cliente: gdec
+Gestión de Información Estadistica: gie
+Gestión de Configuración: gc
+Gestión de Seguridad Funcional: gsf
+
+Ejemplo en paquete: 
+ucla.si.controlador.gc
+ucla.si.dao.gc
+ucla.si.modelo.app
+					
+Ejemplo en template: /gc/frm-servicios.zul
+
+Estandar de Commit:
+
+[Actividad] Descripción.
+Ejemplo: [Modelo/Servicios] Nuevo modelo ..... 
+					
+					
+

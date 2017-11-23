@@ -1,0 +1,124 @@
+<div xmlns:zk="zk" xmlns:z="zul">
+	<div sclass="breadcrumb">
+		<a href="#" tooltip="btntip,after_center"
+			iconSclass="icon-home">
+			Home
+			<custom-attributes title="Go to Home" />
+		</a>
+		<a href="#">Dashboard</a>
+	</div>
+	
+    <style>   
+        .nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+        .nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+        .nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+        .nav_category { cursor:pointer; }
+        .nav_text { color: #696569; font-size : 24px; font-weight: bold;}
+    </style>
+    <tabbox width="100%" sclass="nav_tabs">
+        <tabs id="tabs">
+            <tab label="Our Product" onSelect="updateCategory(self.label)"/>
+            <tab label="Live Demo" onSelect="updateCategory(self.label)"/>
+            <tab label="Online Documentation" onSelect="updateCategory(self.label)"/>
+        </tabs>
+        <toolbar sclass="nav_toolbar">
+            <toolbarbutton target="_zkdemo" style="color: #3a92c8;"
+                    iconSclass="z-icon-twitter-square" href="http://twitter.com/zkoss" />
+            <toolbarbutton target="_zkdemo" style="color: #3b5998;"
+                    iconSclass="z-icon-facebook-square" href="http://www.facebook.com/zk.framework" />
+            <toolbarbutton target="_zkdemo" style="color: #696569;"
+                    iconSclass="z-icon-github-square" href="https://github.com/zkoss/" />
+        </toolbar>
+        <tabpanels>
+            <tabpanel>
+                <toolbar hflex="true">
+                    <toolbarbutton label="Product 1" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Product 2" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Product 3" onClick="updateSubPage(self.label)" />
+                </toolbar>
+            </tabpanel>
+            <tabpanel>
+                <toolbar hflex="true">
+                    <toolbarbutton label="Live Demo 1" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Live Demo 2" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Live Demo 3" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Live Demo 4" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Live Demo 5" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Live Demo 6" onClick="updateSubPage(self.label)" />
+                </toolbar>
+            </tabpanel>
+            <tabpanel>
+                <toolbar hflex="true">
+                    <toolbarbutton label="Documentation 1" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Documentation 2" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Documentation 3" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Documentation 4" onClick="updateSubPage(self.label)" />
+                    <toolbarbutton label="Documentation 5" onClick="updateSubPage(self.label)" />
+                </toolbar>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+    <separator height="0px"></separator>
+    <zscript><![CDATA[
+        void updateCategory(String category) {
+            current_category.setValue(category);
+            current_subpage.setValue("Index");
+        }
+        void updateSubPage(String sub) {
+            current_subpage.setValue(sub);
+        }
+    ]]></zscript>
+ 
+    
+    <vlayout xmlns:n="native" style="padding: 20px">
+		<panel border="normal">
+			<caption style="margin-left: 35px;">
+			<div ><label id="current_category" sclass="nav_text nav_category" onClick='updateSubPage("Index")'>Our Product</label>
+        <label sclass="nav_text">-</label>
+        <label id="current_subpage" sclass="nav_text">Index</label></div>
+				
+      
+			</caption>
+			<panelchildren>
+				<hlayout style="padding: 20px">
+					<button sclass="btn-primary btn-mini" zclass="btn"
+						label="Edit" />
+					<button sclass="btn-success btn-mini" zclass="btn"
+						label="Publish" />
+					<button sclass="btn-danger btn-mini" zclass="btn"
+						label="Delete" />
+				</hlayout>
+				<hlayout>
+					<vlayout hflex="1">
+						<a hflex="1" sclass="site-stats"
+							iconSclass="icon-user" label="1433">
+							<label>Total Users</label>
+						</a>
+						<a hflex="1" sclass="site-stats"
+							iconSclass="icon-arrow-right" label="16">
+							<label>New users (last week)</label>
+						</a>
+						<a hflex="1" sclass="site-stats"
+							iconSclass="icon-shopping-cart" label="259">
+							<label>Total Shop Items</label>
+						</a>
+						<a hflex="1" sclass="site-stats"
+							iconSclass="icon-tag" label="8650">
+							<label>Total Orders</label>
+						</a>
+						<a hflex="1" sclass="site-stats"
+							iconSclass="icon-repeat" label="29">
+							<label>Pending Orders</label>
+						</a>
+					</vlayout>
+					<div hflex="2" vflex="1" style="padding: 20px;">
+						<div sclass="chart" vflex="1" />
+					</div>
+				</hlayout>
+
+			</panelchildren>
+		</panel>
+	</vlayout>
+
+	
+</div>
